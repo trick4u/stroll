@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../services/colors.dart';
 import '../services/scaling.dart';
+import '../widgets/title_box.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -48,56 +49,7 @@ class HomePage extends StatelessWidget {
               )
             ],
           ),
-          Positioned(
-            top: ScaleUtil.height(60),
-            left: ScaleUtil.width(80),
-            right: ScaleUtil.width(80),
-            child: Column(
-              children: [
-                Text(
-                  'Stroll Bonfire',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: ScaleUtil.fontSize(24),
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(height: ScaleUtil.height(4)),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.access_time,
-                      color: Colors.white70,
-                      size: ScaleUtil.scale(16),
-                    ),
-                    SizedBox(width: ScaleUtil.width(4)),
-                    Text(
-                      '22h 00m',
-                      style: TextStyle(
-                        color: Colors.white70,
-                        fontSize: ScaleUtil.fontSize(14),
-                      ),
-                    ),
-                    SizedBox(width: ScaleUtil.width(12)),
-                    Icon(
-                      Icons.person,
-                      color: Colors.white70,
-                      size: ScaleUtil.scale(16),
-                    ),
-                    SizedBox(width: ScaleUtil.width(4)),
-                    Text(
-                      '103',
-                      style: TextStyle(
-                        color: Colors.white70,
-                        fontSize: ScaleUtil.fontSize(14),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
+          TitleBox(),
           // Profile Section
           Positioned(
             left: ScaleUtil.width(30),
@@ -138,6 +90,7 @@ class HomePage extends StatelessWidget {
                 Text(
                   'What is your favorite time\nof the day?',
                   style: TextStyle(
+                    fontFamily: 'ProximaNova',
                     color: Colors.white,
                     fontSize: ScaleUtil.fontSize(20),
                     fontWeight: FontWeight.bold,
@@ -147,6 +100,7 @@ class HomePage extends StatelessWidget {
                 Text(
                   '"Mine is definitely the peace in the morning."',
                   style: TextStyle(
+                    fontFamily: 'ProximaNova',
                     color: Colors.white70,
                     fontSize: ScaleUtil.fontSize(14),
                     fontStyle: FontStyle.italic,
