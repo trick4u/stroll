@@ -62,6 +62,28 @@ class ScaleUtil {
     return size * (_screenHeight! / _baseHeight);
   }
 
+  // Get full screen width
+  static double get fullWidth {
+    if (_screenWidth == null) return _baseWidth;
+    return _screenWidth!;
+  }
+
+  // Get full screen height
+  static double get fullHeight {
+    if (_screenHeight == null) return _baseHeight;
+    return _screenHeight!;
+  }
+
+  // Get proportional width (percentage of screen width)
+  static double proportionalWidth(double percentage) {
+    return fullWidth * (percentage / 100);
+  }
+
+  // Get proportional height (percentage of screen height)
+  static double proportionalHeight(double percentage) {
+    return fullHeight * (percentage / 100);
+  }
+
   // SizedBox
   static SizedBox sizedBox({double? width, double? height}) {
     return SizedBox(
@@ -85,7 +107,8 @@ class ScaleUtil {
   static double deviceAwareScale(double size, {double tabletFactor = 1.5}) {
     return _isTablet ? scale(size * tabletFactor) : scale(size);
   }
+
   static Radius radius(double radius) {
-  return Radius.circular(scale(radius));
-}
+    return Radius.circular(scale(radius));
+  }
 }
