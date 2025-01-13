@@ -26,8 +26,12 @@ class OptionBox extends StatelessWidget {
           vertical: ScaleUtil.height(12),
         ),
         decoration: BoxDecoration(
-          color: isSelected ? Color(0xFF6B4EFF) : Colors.black45,
+          color: Color(0xff232A2E),
           borderRadius: BorderRadius.circular(12),
+          border: Border.all(
+            color: isSelected ? Color(0xFF6B4EFF) : Colors.transparent,
+            width: 1.5,
+          ),
         ),
         child: Row(
           children: [
@@ -36,7 +40,9 @@ class OptionBox extends StatelessWidget {
               height: ScaleUtil.width(24),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Colors.white.withOpacity(0.1),
+                color: isSelected
+                    ? Color(0xFF6B4EFF)
+                    : Colors.white.withOpacity(0.1),
               ),
               child: Center(
                 child: Text(

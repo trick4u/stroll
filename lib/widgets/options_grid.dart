@@ -38,11 +38,11 @@ class _OptionsGridState extends State<OptionsGrid> {
       padding: EdgeInsets.only(
           top: ScaleUtil.height(8), bottom: ScaleUtil.height(16)),
       shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(), // Disable scrolling
+      physics: ScrollPhysics(),
       crossAxisCount: 2,
       mainAxisSpacing: ScaleUtil.height(8),
       crossAxisSpacing: ScaleUtil.width(8),
-      childAspectRatio: 3, // Adjusted for better height
+      childAspectRatio: 3,
       children: List.generate(
         options.length,
         (index) => OptionBox(
