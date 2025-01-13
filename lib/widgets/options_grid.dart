@@ -35,7 +35,7 @@ class _OptionsGridState extends State<OptionsGrid> {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      top: ScaleUtil.proportionalHeight(48),
+      top: ScaleUtil.proportionalHeight(70),
       left: ScaleUtil.width(20),
       right: ScaleUtil.width(20),
       child: Column(
@@ -62,22 +62,6 @@ class _OptionsGridState extends State<OptionsGrid> {
             ),
           ),
           SizedBox(height: ScaleUtil.height(12)),
-          Text(
-            'Pick your option.',
-            style: TextStyle(
-              color: Colors.white70,
-              fontSize: ScaleUtil.fontSize(14),
-              fontFamily: 'ProximaNova',
-            ),
-          ),
-          Text(
-            'See who has a similar mind.',
-            style: TextStyle(
-              color: Colors.white70,
-              fontSize: ScaleUtil.fontSize(14),
-              fontFamily: 'ProximaNova',
-            ),
-          ),
         ],
       ),
     );

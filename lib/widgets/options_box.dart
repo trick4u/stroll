@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 import '../services/scaling.dart';
@@ -57,7 +55,7 @@ class OptionBox extends StatelessWidget {
                 label,
                 style: TextStyle(
                   color: Colors.white70,
-                  fontSize: ScaleUtil.fontSize(14),
+                  fontSize: ScaleUtil.fontSize(12),
                   fontFamily: 'ProximaNova',
                 ),
               ),
