@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 import '../services/scaling.dart';
 
 class TitleBox extends StatelessWidget {
@@ -20,11 +19,10 @@ class TitleBox extends StatelessWidget {
           Text(
             'Stroll Bonfire',
             style: TextStyle(
-               fontFamily: 'ProximaNova',
+              fontFamily: 'ProximaNova',
               color: Color(0xffCCC8FF),
               fontSize: ScaleUtil.fontSize(30),
               fontWeight: FontWeight.bold,
-            
               shadows: [
                 Shadow(
                   offset: Offset(0, 2),
@@ -54,7 +52,7 @@ class TitleBox extends StatelessWidget {
               Text(
                 '22h 00m',
                 style: TextStyle(
-                    fontFamily: 'ProximaNova',
+                  fontFamily: 'ProximaNova',
                   color: Colors.white70,
                   fontSize: ScaleUtil.fontSize(14),
                   shadows: [

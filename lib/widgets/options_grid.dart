@@ -34,35 +34,27 @@ class _OptionsGridState extends State<OptionsGrid> {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      top: ScaleUtil.proportionalHeight(70),
-      left: ScaleUtil.width(20),
-      right: ScaleUtil.width(20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          GridView.count(
-            shrinkWrap: true,
-            crossAxisCount: 2,
-            mainAxisSpacing: ScaleUtil.height(8),
-            crossAxisSpacing: ScaleUtil.width(8),
-            childAspectRatio: 3,
-            children: List.generate(
-              options.length,
-              (index) => OptionBox(
-                label: options[index]['label']!,
-                identifier: options[index]['identifier']!,
-                isSelected: selectedIndex == index,
-                onTap: () {
-                  setState(() {
-                    selectedIndex = index;
-                  });
-                },
-              ),
-            ),
-          ),
-          SizedBox(height: ScaleUtil.height(12)),
-        ],
+    return GridView.count(
+      padding: EdgeInsets.only(
+          top: ScaleUtil.height(8), bottom: ScaleUtil.height(16)),
+      shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(), // Disable scrolling
+      crossAxisCount: 2,
+      mainAxisSpacing: ScaleUtil.height(8),
+      crossAxisSpacing: ScaleUtil.width(8),
+      childAspectRatio: 3, // Adjusted for better height
+      children: List.generate(
+        options.length,
+        (index) => OptionBox(
+          label: options[index]['label']!,
+          identifier: options[index]['identifier']!,
+          isSelected: selectedIndex == index,
+          onTap: () {
+            setState(() {
+              selectedIndex = index;
+            });
+          },
+        ),
       ),
     );
   }

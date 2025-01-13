@@ -13,69 +13,61 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     ScaleUtil.init(context);
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.black,
-      body: Stack(
+      body: Column(
         children: [
-          // Background Image with Gradient
-          Positioned.fill(
-            child: Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/sunset.png'),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              child: Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Colors.black.withOpacity(0.9),
-                      Colors.black.withOpacity(0.5),
-                      Colors.transparent,
-                    ],
-                    begin: Alignment.bottomCenter,
-                    end: Alignment.topCenter,
-                    stops: const [0.2, 0.6, 1.0],
+          // Top Half - Image Section
+          Container(
+            height: MediaQuery.of(context).size.height * 0.5, // Reduced further
+            width: double.infinity,
+            child: Stack(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/sunset.png'),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
-              ),
+                Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Colors.black,
+                        Colors.transparent,
+                        Colors.transparent,
+                      ],
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.topCenter,
+                      stops: const [0.0, 0.4, 1.0],
+                    ),
+                  ),
+                ),
+                SafeArea(
+                  child: const TitleBox(),
+                ),
+              ],
             ),
           ),
 
-          // Content Container
-          SafeArea(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                // Top Section (Title)
-                Padding(
-                  padding: EdgeInsets.only(top: ScaleUtil.height(16)),
-                  child: const TitleBox(),
+          // Bottom Half - Content Section
+          Expanded(
+            child: Container(
+              color: Colors.black,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: ScaleUtil.width(16)),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const ProfileImageBox(),
+                    const OptionsGrid(),
+                    const ActionButtons(),
+                  ],
                 ),
-
-                // Spacer to push content to bottom half
-                const Spacer(),
-
-                // Bottom Half Content
-                Container(
-                  // Takes bottom 60% of screen
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: ScaleUtil.width(20),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const ProfileImageBox(),
-                        SizedBox(height: ScaleUtil.height(24)),
-                        const OptionsGrid(),
-                        const ActionButtons(),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
+              ),
             ),
           ),
         ],
