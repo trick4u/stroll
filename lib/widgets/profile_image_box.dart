@@ -11,55 +11,108 @@ class ProfileImageBox extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        Row(
-          children: [
-            Container(
-              height: ScaleUtil.scale(32), // Reduced size
-              width: ScaleUtil.scale(32), // Reduced size
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(
-                  color: Colors.white24,
-                  width: 2,
-                ),
-              ),
-              child: CircleAvatar(
-                backgroundImage: AssetImage('assets/profile.png'),
-              ),
+        ImageNameBox(),
+        Container(
+          width: double.infinity,
+          padding: EdgeInsets.only(
+            left: ScaleUtil.width(70),
+            top: ScaleUtil.height(4),
+          ),
+          child: Text(
+            'What is your favorite time\nof the day?',
+            textAlign: TextAlign.left,
+            style: TextStyle(
+              fontFamily: 'ProximaNova',
+              color: Colors.white,
+              fontSize: ScaleUtil.fontSize(20),
+              fontWeight: FontWeight.w700,
+              height: 1.2,
             ),
-            SizedBox(width: ScaleUtil.width(8)), // Reduced spacing
-            Text(
-              'Angelina, 28',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: ScaleUtil.fontSize(16),
-                fontWeight: FontWeight.w600,
-                fontFamily: 'ProximaNova',
-              ),
-            ),
-          ],
-        ),
-        SizedBox(height: ScaleUtil.height(12)), // Reduced spacing
-        Text(
-          'What is your favorite time\nof the day?',
-          style: TextStyle(
-            fontFamily: 'ProximaNova',
-            color: Colors.white,
-            fontSize: ScaleUtil.fontSize(20),
-            fontWeight: FontWeight.bold,
           ),
         ),
-        // Reduced spacing
-        Text(
-          '"Mine is definitely the peace in the morning."',
-          style: TextStyle(
-            fontFamily: 'ProximaNova',
-            color: Colors.white70,
-            fontSize: ScaleUtil.fontSize(12),
-            fontStyle: FontStyle.italic,
+        SizedBox(height: ScaleUtil.height(8)),
+        Container(
+          width: double.infinity,
+          alignment: Alignment.center,
+          child: Text(
+            '"Mine is definitely the peace in the morning."',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'ProximaNova',
+              color: Color(0xff8B88EF),
+              fontSize: ScaleUtil.fontSize(12),
+              fontStyle: FontStyle.italic,
+            ),
           ),
         ),
       ],
+    );
+  }
+}
+
+class ImageNameBox extends StatelessWidget {
+  const ImageNameBox({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: ScaleUtil.scale(45),
+      width: double.infinity,
+      child: Stack(
+        children: [
+          // Left circular red container
+          Positioned(
+            left: ScaleUtil.scale(30),
+            top: ScaleUtil.scale(15),
+            child: Container(
+              height: ScaleUtil.scale(20),
+              width: ScaleUtil.scale(107),
+              padding: EdgeInsets.symmetric(
+                horizontal: ScaleUtil.width(8),
+                vertical: ScaleUtil.height(0),
+              ),
+              decoration: BoxDecoration(
+                color: Color(0xFF121518E5),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Text(
+                textAlign: TextAlign.right,
+                'Angelina, 28',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: ScaleUtil.fontSize(11),
+                  fontWeight: FontWeight.w600,
+                  fontFamily: 'ProximaNova',
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            left: ScaleUtil.scale(10),
+            child: Container(
+              height: ScaleUtil.scale(60),
+              width: ScaleUtil.scale(60),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Color(0xFF121518E5),
+                border: Border.all(
+                  color: Color(0xFF121518E5),
+                  width: 2,
+                ),
+                image: const DecorationImage(
+                  image: AssetImage('assets/profile.png'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ),
+          // Profile image container
+
+          // Right pink container with name
+        ],
+      ),
     );
   }
 }

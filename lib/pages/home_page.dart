@@ -152,19 +152,27 @@ class ActionButtons extends StatelessWidget {
         ),
         Spacer(),
         Container(
+          height: ScaleUtil.width(48),
+          width: ScaleUtil.width(48),
           padding: EdgeInsets.all(ScaleUtil.width(12)),
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             color: Colors.white.withOpacity(0.1),
+            border: Border.all(
+              color: const Color(0xFF6B4EFF),
+              width: 2,
+            ),
           ),
           child: Icon(
             Icons.mic,
-            color: Colors.white,
+            color: const Color(0xFF6B4EFF),
             size: ScaleUtil.scale(24),
           ),
         ),
         SizedBox(width: ScaleUtil.width(16)),
         Container(
+          height: ScaleUtil.width(48),
+          width: ScaleUtil.width(48),
           padding: EdgeInsets.all(ScaleUtil.width(12)),
           decoration: BoxDecoration(
             shape: BoxShape.circle,
@@ -172,7 +180,7 @@ class ActionButtons extends StatelessWidget {
           ),
           child: Icon(
             Icons.arrow_forward,
-            color: Colors.white,
+            color: Colors.black,
             size: ScaleUtil.scale(24),
           ),
         ),

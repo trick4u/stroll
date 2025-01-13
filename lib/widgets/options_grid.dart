@@ -38,7 +38,7 @@ class _OptionsGridState extends State<OptionsGrid> {
       padding: EdgeInsets.only(
           top: ScaleUtil.height(8), bottom: ScaleUtil.height(16)),
       shrinkWrap: true,
-      physics: ScrollPhysics(),
+      physics: AlwaysScrollableScrollPhysics(),
       crossAxisCount: 2,
       mainAxisSpacing: ScaleUtil.height(8),
       crossAxisSpacing: ScaleUtil.width(8),
