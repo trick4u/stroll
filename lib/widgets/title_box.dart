@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stroll/services/colors.dart';
+import 'package:stroll/services/strings.dart';
 
 import '../services/scaling.dart';
 
@@ -17,7 +18,7 @@ class TitleBox extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Stroll Bonfire',
+              StringsCollection.appTitle,
               style: TextStyle(
                 fontFamily: 'ProximaNova',
                 color: AppColors.lightColor,
@@ -58,7 +59,7 @@ class TitleBox extends StatelessWidget {
             ),
             SizedBox(width: ScaleUtil.width(4)),
             Text(
-              '22h 00m',
+              StringsCollection.viewersCount,
               style: TextStyle(
                 fontFamily: 'ProximaNova',
                 color: Colors.white70,
@@ -87,7 +88,7 @@ class TitleBox extends StatelessWidget {
             ),
             SizedBox(width: ScaleUtil.width(4)),
             Text(
-              '103',
+              StringsCollection.participantsCount,
               style: TextStyle(
                 color: Colors.white70,
                 fontSize: ScaleUtil.fontSize(14),

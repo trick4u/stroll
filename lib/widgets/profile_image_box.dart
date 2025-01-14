@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stroll/services/strings.dart';
 
 import '../services/colors.dart';
 import '../services/scaling.dart';
@@ -36,7 +37,7 @@ class ProfileImageBox extends StatelessWidget {
           width: double.infinity,
           alignment: Alignment.center,
           child: Text(
-            '"Mine is definitely the peace in the morning."',
+            StringsCollection.userAnswer,
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'ProximaNova',
@@ -80,7 +81,7 @@ class ImageNameBox extends StatelessWidget {
               ),
               child: Text(
                 textAlign: TextAlign.right,
-                'Angelina, 28',
+                StringsCollection.profileName,
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: ScaleUtil.fontSize(11),
@@ -109,9 +110,6 @@ class ImageNameBox extends StatelessWidget {
               ),
             ),
           ),
-          // Profile image container
-
-          // Right pink container with name
         ],
       ),
     );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../services/scaling.dart';
+import '../services/strings.dart';
 import 'options_box.dart';
 
 class OptionsGrid extends StatefulWidget {
@@ -15,20 +16,20 @@ class _OptionsGridState extends State<OptionsGrid> {
 
   final List<Map<String, String>> options = [
     {
-      'identifier': 'A',
-      'label': 'The peace in the early mornings',
+      'identifier': StringsCollection.optionAIdentifier,
+      'label': StringsCollection.optionA,
     },
     {
-      'identifier': 'B',
-      'label': 'The magical golden hours',
+      'identifier': StringsCollection.optionBIdentifier,
+      'label': StringsCollection.optionB,
     },
     {
-      'identifier': 'C',
-      'label': 'Wind-down time after dinners',
+      'identifier': StringsCollection.optionCIdentifier,
+      'label': StringsCollection.optionC,
     },
     {
-      'identifier': 'D',
-      'label': 'The serenity past midnight',
+      'identifier': StringsCollection.optionDIdentifier,
+      'label': StringsCollection.optionD,
     },
   ];
 
