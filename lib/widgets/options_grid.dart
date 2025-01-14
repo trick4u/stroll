@@ -42,7 +42,7 @@ class _OptionsGridState extends State<OptionsGrid> {
       crossAxisCount: 2,
       mainAxisSpacing: ScaleUtil.height(8),
       crossAxisSpacing: ScaleUtil.width(8),
-      childAspectRatio: 3,
+      childAspectRatio: 2.8,
       children: List.generate(
         options.length,
         (index) => OptionBox(

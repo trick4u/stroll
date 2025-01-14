@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../controller/navigation_controller.dart';
 import '../services/colors.dart';
 import '../services/scaling.dart';
 import '../widgets/options_grid.dart';
 import '../widgets/profile_image_box.dart';
 import '../widgets/title_box.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends GetView<NavigationController> {
   const HomePage({super.key});
 
   @override
@@ -15,76 +17,22 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.black,
-      body: Column(
-        children: [
-          // Top Half - Image Section
-          Container(
-            height: MediaQuery.of(context).size.height * 0.5, // Reduced further
-            width: double.infinity,
-            child: Stack(
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/sunset.png'),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        Colors.black,
-                        Colors.transparent,
-                        Colors.transparent,
-                      ],
-                      begin: Alignment.bottomCenter,
-                      end: Alignment.topCenter,
-                      stops: const [0.0, 0.4, 1.0],
-                    ),
-                  ),
-                ),
-                SafeArea(
-                  child: const TitleBox(),
-                ),
-              ],
-            ),
-          ),
-
-          // Bottom Half - Content Section
-          Expanded(
-            child: Container(
-              color: Colors.black,
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: ScaleUtil.width(16)),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const ProfileImageBox(),
-                    const OptionsGrid(),
-                    const ActionButtons(),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
+       body: Obx(() => controller.buildBody(context)),
       bottomNavigationBar: const CustomBottomNavBar(),
     );
   }
 }
 
-class CustomBottomNavBar extends StatelessWidget {
+
+
+class CustomBottomNavBar extends GetView<NavigationController> {
   const CustomBottomNavBar({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.black,
+        color: Color(0xFF0F1115),
         border: Border(
           top: BorderSide(
             color: Colors.white.withOpacity(0.1),
@@ -92,31 +40,35 @@ class CustomBottomNavBar extends StatelessWidget {
           ),
         ),
       ),
-      child: BottomNavigationBar(
-        backgroundColor: Colors.transparent,
-        type: BottomNavigationBarType.fixed,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.credit_card),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.local_fire_department),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chat_bubble_outline),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
-            label: '',
-          ),
-        ],
-        selectedItemColor: Color(0xFF6B4EFF),
-        unselectedItemColor: Colors.white54,
+      child: Obx(
+        () => BottomNavigationBar(
+          backgroundColor: Colors.transparent,
+          type: BottomNavigationBarType.fixed,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+           currentIndex: controller.selectedIndex,
+          onTap: controller.changeIndex,
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.credit_card),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.local_fire_department),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.chat_bubble_outline),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person_outline),
+              label: '',
+            ),
+          ],
+          selectedItemColor: Color(0xFF6B4EFF),
+          unselectedItemColor: Colors.white54,
+        ),
       ),
     );
   }
