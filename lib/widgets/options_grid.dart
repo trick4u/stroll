@@ -36,7 +36,7 @@ class _OptionsGridState extends State<OptionsGrid> {
   Widget build(BuildContext context) {
     return GridView.count(
       padding: EdgeInsets.only(
-          top: ScaleUtil.height(8), bottom: ScaleUtil.height(16)),
+          top: ScaleUtil.height(8), bottom: ScaleUtil.height(8)),
       shrinkWrap: true,
       physics: AlwaysScrollableScrollPhysics(),
       crossAxisCount: 2,

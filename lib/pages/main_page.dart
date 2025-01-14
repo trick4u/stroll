@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../services/scaling.dart';
+import '../widgets/action_buttons.dart';
 import '../widgets/options_grid.dart';
 import '../widgets/profile_image_box.dart';
 import '../widgets/title_box.dart';
@@ -17,7 +18,7 @@ class HomeScreen extends StatelessWidget {
       children: [
         // Top Half - Image Section
         Container(
-          height: MediaQuery.of(context).size.height * 0.5, // Reduced further
+          height: MediaQuery.of(context).size.height * 0.5,
           width: double.infinity,
           child: Stack(
             children: [
