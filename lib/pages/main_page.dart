@@ -6,6 +6,7 @@ import '../widgets/action_buttons.dart';
 import '../widgets/options_grid.dart';
 import '../widgets/profile_image_box.dart';
 import '../widgets/title_box.dart';
+import '../widgets/top_image_box.dart';
 import 'home_page.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -18,39 +19,7 @@ class HomeScreen extends StatelessWidget {
     return Column(
       children: [
         // Top Half - Image Section
-        Container(
-          height: MediaQuery.of(context).size.height * 0.5,
-          width: double.infinity,
-          child: Stack(
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/sunset.png'),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      AppColors.darkColor,
-                      Colors.transparent,
-                      Colors.transparent,
-                    ],
-                    begin: Alignment.bottomCenter,
-                    end: Alignment.topCenter,
-                    stops: const [0.0, 0.4, 1.0],
-                  ),
-                ),
-              ),
-              SafeArea(
-                child: const TitleBox(),
-              ),
-            ],
-          ),
-        ),
+        TopImageBox(),
 
         // Bottom Half - Content Section
         Expanded(
