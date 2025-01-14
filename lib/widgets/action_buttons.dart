@@ -1,9 +1,8 @@
-
-
-
 import 'package:flutter/material.dart';
 
+import '../services/colors.dart';
 import '../services/scaling.dart';
+import '../services/strings.dart';
 
 class ActionButtons extends StatelessWidget {
   const ActionButtons({super.key});
@@ -16,7 +15,7 @@ class ActionButtons extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Pick your option.',
+             StringsCollection.pickOptionText,
               style: TextStyle(
                 color: Colors.white70,
                 fontSize: ScaleUtil.fontSize(12),
@@ -24,7 +23,7 @@ class ActionButtons extends StatelessWidget {
               ),
             ),
             Text(
-              'See who has a similar mind.',
+              StringsCollection.findSimilarMindsText,
               style: TextStyle(
                 color: Colors.white70,
                 fontSize: ScaleUtil.fontSize(12),
@@ -42,13 +41,13 @@ class ActionButtons extends StatelessWidget {
             shape: BoxShape.circle,
             color: Colors.white.withOpacity(0.1),
             border: Border.all(
-              color: const Color(0xFF6B4EFF),
+              color: AppColors.lightColor,
               width: 2,
             ),
           ),
           child: Icon(
             Icons.mic,
-            color: const Color(0xFF6B4EFF),
+            color: AppColors.lightColor,
             size: ScaleUtil.scale(24),
           ),
         ),
@@ -59,11 +58,11 @@ class ActionButtons extends StatelessWidget {
           padding: EdgeInsets.all(ScaleUtil.width(12)),
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: const Color(0xFF6B4EFF),
+            color: AppColors.lightColor,
           ),
           child: Icon(
             Icons.arrow_forward,
-            color: Colors.black,
+            color: AppColors.darkColor,
             size: ScaleUtil.scale(24),
           ),
         ),

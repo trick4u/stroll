@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:stroll/services/scaling.dart';
 
 import '../controller/navigation_controller.dart';
+import '../services/colors.dart';
 
 class CustomBottomNavBar extends GetView<NavigationController> {
   const CustomBottomNavBar({super.key});
@@ -22,7 +23,7 @@ class CustomBottomNavBar extends GetView<NavigationController> {
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
               decoration: BoxDecoration(
-                color: const Color(0xFF6B4EFF),
+                color: const Color(0xFFB5B2FF),
                 borderRadius: BorderRadius.circular(10),
               ),
               constraints: const BoxConstraints(
@@ -32,7 +33,7 @@ class CustomBottomNavBar extends GetView<NavigationController> {
               child: Text(
                 count.toString(),
                 style: const TextStyle(
-                  color: Colors.white,
+                  color: AppColors.darkColor,
                   fontSize: 10,
                   fontWeight: FontWeight.bold,
                 ),
@@ -80,7 +81,7 @@ class CustomBottomNavBar extends GetView<NavigationController> {
                 _buildSvgIcon(
                   'home.svg',
                   color: controller.selectedIndex == 0
-                      ? const Color(0xFF6B4EFF)
+                      ? AppColors.lightColor
                       : Colors.white54,
                 ),
                 0,
@@ -92,7 +93,7 @@ class CustomBottomNavBar extends GetView<NavigationController> {
                 _buildSvgIcon(
                   'fire.svg',
                   color: controller.selectedIndex == 1
-                      ? const Color(0xFF6B4EFF)
+                      ? AppColors.lightColor
                       : Colors.white54,
                 ),
                 1,
@@ -104,7 +105,7 @@ class CustomBottomNavBar extends GetView<NavigationController> {
                 _buildSvgIcon(
                   'chat.svg',
                   color: controller.selectedIndex == 2
-                      ? const Color(0xFF6B4EFF)
+                      ? AppColors.lightColor
                       : Colors.white54,
                 ),
                 2,
@@ -121,7 +122,7 @@ class CustomBottomNavBar extends GetView<NavigationController> {
               label: '',
             ),
           ],
-          selectedItemColor: const Color(0xFF6B4EFF),
+          selectedItemColor: AppColors.lightColor,
           unselectedItemColor: Colors.white54,
         ),
       ),

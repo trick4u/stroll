@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stroll/services/colors.dart';
 
 import '../services/scaling.dart';
 
@@ -12,21 +13,32 @@ class TitleBox extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text(
-          'Stroll Bonfire',
-          style: TextStyle(
-            fontFamily: 'ProximaNova',
-            color: Color(0xffCCC8FF),
-            fontSize: ScaleUtil.fontSize(30),
-            fontWeight: FontWeight.bold,
-            shadows: [
-              Shadow(
-                offset: Offset(0, 2),
-                blurRadius: 4.0,
-                color: Colors.black.withOpacity(0.3),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Stroll Bonfire',
+              style: TextStyle(
+                fontFamily: 'ProximaNova',
+                color: AppColors.lightColor,
+                fontSize: ScaleUtil.fontSize(30),
+                fontWeight: FontWeight.bold,
+                shadows: [
+                  Shadow(
+                    offset: Offset(0, 2),
+                    blurRadius: 4.0,
+                    color: AppColors.darkColor.withOpacity(0.3),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+            ExpandIcon(
+              onPressed: (ds) {},
+              isExpanded: false,
+              color: AppColors.lightColor,
+              size: ScaleUtil.scale(24),
+            ),
+          ],
         ),
         SizedBox(height: ScaleUtil.height(4)),
         Row(
@@ -40,7 +52,7 @@ class TitleBox extends StatelessWidget {
                 Shadow(
                   offset: Offset(0, 1),
                   blurRadius: 2.0,
-                  color: Colors.black.withOpacity(0.3),
+                  color: AppColors.darkColor.withOpacity(0.3),
                 ),
               ],
             ),
@@ -55,7 +67,7 @@ class TitleBox extends StatelessWidget {
                   Shadow(
                     offset: Offset(0, 1),
                     blurRadius: 2.0,
-                    color: Colors.black.withOpacity(0.3),
+                    color: AppColors.darkColor.withOpacity(0.3),
                   ),
                 ],
               ),
@@ -69,7 +81,7 @@ class TitleBox extends StatelessWidget {
                 Shadow(
                   offset: Offset(0, 1),
                   blurRadius: 2.0,
-                  color: Colors.black.withOpacity(0.3),
+                  color: AppColors.darkColor.withOpacity(0.3),
                 ),
               ],
             ),
@@ -83,7 +95,7 @@ class TitleBox extends StatelessWidget {
                   Shadow(
                     offset: Offset(0, 1),
                     blurRadius: 2.0,
-                    color: Colors.black.withOpacity(0.3),
+                    color: AppColors.darkColor.withOpacity(0.3),
                   ),
                 ],
               ),

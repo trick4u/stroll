@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stroll/services/colors.dart';
 
 import '../services/scaling.dart';
 
@@ -29,7 +30,7 @@ class OptionBox extends StatelessWidget {
           color: Color(0xff232A2E),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
-            color: isSelected ? Color(0xFF6B4EFF) : Colors.transparent,
+            color: isSelected ? AppColors.lightColor : Colors.transparent,
             width: 1.5,
           ),
         ),
@@ -41,7 +42,7 @@ class OptionBox extends StatelessWidget {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: isSelected
-                    ? Color(0xFF6B4EFF)
+                    ? AppColors.lightColor
                     : Colors.white.withOpacity(0.1),
               ),
               child: Center(

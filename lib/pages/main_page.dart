@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../services/colors.dart';
 import '../services/scaling.dart';
 import '../widgets/action_buttons.dart';
 import '../widgets/options_grid.dart';
@@ -34,7 +35,7 @@ class HomeScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      Colors.black,
+                      AppColors.darkColor,
                       Colors.transparent,
                       Colors.transparent,
                     ],
@@ -54,7 +55,7 @@ class HomeScreen extends StatelessWidget {
         // Bottom Half - Content Section
         Expanded(
           child: Container(
-            color: Colors.black,
+            color: AppColors.darkColor,
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: ScaleUtil.width(16)),
               child: Column(

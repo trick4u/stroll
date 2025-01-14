@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../services/colors.dart';
 import '../services/scaling.dart';
 
 class ProfileImageBox extends StatelessWidget {
@@ -39,7 +40,7 @@ class ProfileImageBox extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'ProximaNova',
-              color: Color(0xff8B88EF),
+              color: AppColors.lightColor,
               fontSize: ScaleUtil.fontSize(12),
               fontStyle: FontStyle.italic,
             ),
