@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:stroll/services/colors.dart';
 
@@ -13,11 +14,18 @@ class HomePage extends GetView<NavigationController> {
   @override
   Widget build(BuildContext context) {
     ScaleUtil.init(context);
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      backgroundColor: AppColors.darkColor,
-      body: Obx(() => controller.buildBody(context)),
-      bottomNavigationBar: const CustomBottomNavBar(),
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.light,
+        statusBarBrightness: Brightness.dark,
+      ),
+      child: Scaffold(
+        resizeToAvoidBottomInset: false,
+        backgroundColor: AppColors.darkColor,
+        body: Obx(() => controller.buildBody(context)),
+        bottomNavigationBar: const CustomBottomNavBar(),
+      ),
     );
   }
 }

@@ -7,6 +7,8 @@ import 'pages/home_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  //white status bar
+
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
@@ -20,13 +22,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  GetMaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-        initialBinding: NavigationBinding(),
+      initialBinding: NavigationBinding(),
       title: 'Stroll Flutter',
       home: HomePage(),
     );
   }
 }
-
-
