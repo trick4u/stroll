@@ -23,15 +23,15 @@ class OptionBox extends StatelessWidget {
       onTap: onTap,
       child: Container(
         padding: EdgeInsets.symmetric(
-          horizontal: ScaleUtil.width(16),
-          vertical: ScaleUtil.height(12),
+          horizontal: ScaleUtil.width(10),
+          vertical: ScaleUtil.height(10),
         ),
         decoration: BoxDecoration(
           color: Color(0xff232A2E),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
-            color: isSelected ? AppColors.lightColor : Colors.transparent,
-            width: 1.5,
+            color: isSelected ? AppColors.lightPurple : Colors.transparent,
+            width: 2,
           ),
         ),
         child: Row(
@@ -42,16 +42,21 @@ class OptionBox extends StatelessWidget {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: isSelected
-                    ? AppColors.lightColor
+                    ? AppColors.lightPurple
                     : Colors.white.withOpacity(0.1),
+                border: Border.all(
+                  color: isSelected ? AppColors.lightPurple : Colors.white,
+                  width: 1.5,
+                ),
               ),
               child: Center(
                 child: Text(
                   identifier,
                   style: TextStyle(
                     color: Colors.white70,
-                    fontSize: ScaleUtil.fontSize(14),
+                    fontSize: ScaleUtil.fontSize(12),
                     fontFamily: 'ProximaNova',
+                    fontWeight: FontWeight.w400,
                   ),
                 ),
               ),
@@ -61,9 +66,10 @@ class OptionBox extends StatelessWidget {
               child: Text(
                 label,
                 style: TextStyle(
-                  color: Colors.white70,
+                  color: Color(0xffC4C4C4),
                   fontSize: ScaleUtil.fontSize(12),
                   fontFamily: 'ProximaNova',
+                  fontWeight: FontWeight.w300,
                 ),
               ),
             ),

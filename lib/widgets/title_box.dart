@@ -22,33 +22,33 @@ class TitleBox extends StatelessWidget {
               style: TextStyle(
                 fontFamily: 'ProximaNova',
                 color: AppColors.lightColor,
-                fontSize: ScaleUtil.fontSize(30),
-                fontWeight: FontWeight.bold,
+                fontSize: ScaleUtil.fontSize(34),
+                fontWeight: FontWeight.w600,
                 shadows: [
                   Shadow(
-                    offset: Offset(0, 2),
+                    offset: Offset(0, 3), // Slightly larger offset
                     blurRadius: 4.0,
-                    color: AppColors.darkColor.withOpacity(0.3),
+                    color: AppColors.lightColor.withOpacity(0.3),
                   ),
                 ],
               ),
             ),
-            ExpandIcon(
-              onPressed: (ds) {},
-              isExpanded: false,
+            SizedBox(width: ScaleUtil.width(4)),
+            Icon(
+              Icons.keyboard_arrow_down,
               color: AppColors.lightColor,
-              size: ScaleUtil.scale(24),
-            ),
+              size: ScaleUtil.scale(25),
+            )
           ],
         ),
-        SizedBox(height: ScaleUtil.height(4)),
+        SizedBox(height: ScaleUtil.height(6)),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
               Icons.access_time,
-              color: Colors.white70,
-              size: ScaleUtil.scale(16),
+              color: Colors.white.withOpacity(0.7),
+              size: ScaleUtil.scale(15),
               shadows: [
                 Shadow(
                   offset: Offset(0, 1),
@@ -73,9 +73,9 @@ class TitleBox extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(width: ScaleUtil.width(12)),
+            SizedBox(width: ScaleUtil.width(16)),
             Icon(
-              Icons.person,
+              Icons.person_2_outlined,
               color: Colors.white70,
               size: ScaleUtil.scale(16),
               shadows: [

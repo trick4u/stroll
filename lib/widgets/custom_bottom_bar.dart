@@ -21,23 +21,30 @@ class CustomBottomNavBar extends GetView<NavigationController> {
             right: -8,
             top: -4,
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+              height: ScaleUtil.height(13),
+              width: ScaleUtil.width(16),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 4,
+              ),
               decoration: BoxDecoration(
-                color: const Color(0xFFB5B2FF),
-                borderRadius: BorderRadius.circular(10),
+                color: AppColors.lightPurple,
+                borderRadius: BorderRadius.all(Radius.circular(15)),
               ),
               constraints: const BoxConstraints(
                 minWidth: 16,
                 minHeight: 16,
               ),
-              child: Text(
-                count.toString(),
-                style: const TextStyle(
-                  color: AppColors.darkColor,
-                  fontSize: 10,
-                  fontWeight: FontWeight.bold,
+              child: Center(
+                child: Text(
+                  count.toString(),
+                  style: const TextStyle(
+                    color: AppColors.darkColor,
+                    fontSize: 7,
+                    fontWeight: FontWeight.w700,
+                    fontFamily: "ProximaNova",
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                textAlign: TextAlign.center,
               ),
             ),
           ),
@@ -81,7 +88,7 @@ class CustomBottomNavBar extends GetView<NavigationController> {
                 _buildSvgIcon(
                   'home.svg',
                   color: controller.selectedIndex == 0
-                      ? AppColors.lightColor
+                      ? Colors.white54
                       : Colors.white54,
                 ),
                 0,
@@ -93,7 +100,7 @@ class CustomBottomNavBar extends GetView<NavigationController> {
                 _buildSvgIcon(
                   'fire.svg',
                   color: controller.selectedIndex == 1
-                      ? AppColors.lightColor
+                      ? AppColors.lightPurple
                       : Colors.white54,
                 ),
                 1,
@@ -105,7 +112,7 @@ class CustomBottomNavBar extends GetView<NavigationController> {
                 _buildSvgIcon(
                   'chat.svg',
                   color: controller.selectedIndex == 2
-                      ? AppColors.lightColor
+                      ? AppColors.lightPurple
                       : Colors.white54,
                 ),
                 2,
@@ -122,7 +129,7 @@ class CustomBottomNavBar extends GetView<NavigationController> {
               label: '',
             ),
           ],
-          selectedItemColor: AppColors.lightColor,
+          selectedItemColor: AppColors.lightPurple,
           unselectedItemColor: Colors.white54,
         ),
       ),

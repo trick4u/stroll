@@ -15,19 +15,21 @@ class ActionButtons extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-             StringsCollection.pickOptionText,
+              StringsCollection.pickOptionText,
               style: TextStyle(
-                color: Colors.white70,
+                color: Color(0xffE5E5E5),
                 fontSize: ScaleUtil.fontSize(12),
                 fontFamily: 'ProximaNova',
+                fontWeight: FontWeight.w300,
               ),
             ),
             Text(
               StringsCollection.findSimilarMindsText,
               style: TextStyle(
-                color: Colors.white70,
+                color: Color(0xffE5E5E5),
                 fontSize: ScaleUtil.fontSize(12),
                 fontFamily: 'ProximaNova',
+                fontWeight: FontWeight.w300,
               ),
             ),
           ],
@@ -41,13 +43,13 @@ class ActionButtons extends StatelessWidget {
             shape: BoxShape.circle,
             color: Colors.white.withOpacity(0.1),
             border: Border.all(
-              color: AppColors.lightColor,
+              color: AppColors.lightPurple,
               width: 2,
             ),
           ),
           child: Icon(
             Icons.mic,
-            color: AppColors.lightColor,
+            color: AppColors.lightPurple,
             size: ScaleUtil.scale(24),
           ),
         ),
@@ -58,7 +60,10 @@ class ActionButtons extends StatelessWidget {
           padding: EdgeInsets.all(ScaleUtil.width(12)),
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: AppColors.lightColor,
+            color: Color(
+              0xff8B88EF,
+            ),
+            // color: AppColors.lightColor,
           ),
           child: Icon(
             Icons.arrow_forward,

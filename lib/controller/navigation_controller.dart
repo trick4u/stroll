@@ -10,27 +10,27 @@ class NavigationController extends GetxController {
 
   //made up function to simulate notification count
   final RxMap<int, int> _notificationCounts = <int, int>{
-    1: 1,
+    1: 0,
     2: 10,
   }.obs;
 
   int? getNotificationCount(int index) => _notificationCounts[index];
 
-    void changeIndex(int index) {
+  void changeIndex(int index) {
     _selectedIndex.value = index;
     // Clear notification count when tab is selected
     if (_notificationCounts.containsKey(index)) {
       _notificationCounts.remove(index);
     }
   }
-   void updateNotificationCount(int tabIndex, int count) {
-    if (count > 0) {
+
+  void updateNotificationCount(int tabIndex, int count) {
+    if (count >= 0) {
       _notificationCounts[tabIndex] = count;
     } else {
       _notificationCounts.remove(tabIndex);
     }
   }
-
 
   Widget buildBody(BuildContext context) {
     switch (selectedIndex) {

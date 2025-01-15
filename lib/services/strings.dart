@@ -14,7 +14,7 @@ class StringsCollection {
   // Option choices
   static const String optionA = "The peace in the early mornings";
   static const String optionB = "The magical golden hours";
-  static const String optionC = "Wind-down time after dinners";
+  static const String optionC = "Wind down time after dinners";
   static const String optionD = "The serenity past midnight";
 
   // Bottom section

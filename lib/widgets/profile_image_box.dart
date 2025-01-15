@@ -18,7 +18,6 @@ class ProfileImageBox extends StatelessWidget {
           width: double.infinity,
           padding: EdgeInsets.only(
             left: ScaleUtil.width(70),
-            top: ScaleUtil.height(0),
           ),
           child: Text(
             'What is your favorite time\nof the day?',
@@ -44,6 +43,7 @@ class ProfileImageBox extends StatelessWidget {
               color: AppColors.lightColor,
               fontSize: ScaleUtil.fontSize(12),
               fontStyle: FontStyle.italic,
+              fontWeight: FontWeight.w400,
             ),
           ),
         ),
@@ -60,14 +60,14 @@ class ImageNameBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: ScaleUtil.scale(50),
+      height: ScaleUtil.scale(40),
       width: double.infinity,
       child: Stack(
         children: [
           // Left circular red container
           Positioned(
             left: ScaleUtil.scale(30),
-            top: ScaleUtil.scale(15),
+            top: ScaleUtil.scale(10),
             child: Container(
               height: ScaleUtil.scale(20),
               width: ScaleUtil.scale(107),
@@ -92,10 +92,10 @@ class ImageNameBox extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: ScaleUtil.scale(10),
+            left: ScaleUtil.scale(15),
             child: Container(
-              height: ScaleUtil.scale(50),
-              width: ScaleUtil.scale(50),
+              height: ScaleUtil.scale(45),
+              width: ScaleUtil.scale(45),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: Color(0xFF121518E5),
