@@ -24,7 +24,6 @@ class OptionBox extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.symmetric(
           horizontal: ScaleUtil.width(10),
-          vertical: ScaleUtil.height(10),
         ),
         decoration: BoxDecoration(
           color: Color(0xff232A2E),

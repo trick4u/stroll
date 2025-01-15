@@ -31,7 +31,7 @@ class ProfileImageBox extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: ScaleUtil.height(8)),
+        SizedBox(height: ScaleUtil.height(4)),
         Container(
           width: double.infinity,
           alignment: Alignment.center,
@@ -43,7 +43,7 @@ class ProfileImageBox extends StatelessWidget {
               color: AppColors.lightColor,
               fontSize: ScaleUtil.fontSize(12),
               fontStyle: FontStyle.italic,
-              fontWeight: FontWeight.w400,
+              fontWeight: FontWeight.w300,
             ),
           ),
         ),

@@ -1,6 +1,5 @@
-
-
 import 'package:flutter/material.dart';
+import 'package:stroll/services/scaling.dart';
 
 import '../services/colors.dart';
 import 'title_box.dart';
@@ -39,8 +38,12 @@ class TopImageBox extends StatelessWidget {
               ),
             ),
           ),
-          SafeArea(
-            child: const TitleBox(),
+          Positioned(
+            top: ScaleUtil.height(14),
+            left: ScaleUtil.width(80),
+            child: SafeArea(
+              child: const TitleBox(),
+            ),
           ),
         ],
       ),

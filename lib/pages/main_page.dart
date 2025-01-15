@@ -17,7 +17,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   
     return Column(
       children: [
         // Top Half - Image Section
@@ -31,11 +30,12 @@ class HomeScreen extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: ScaleUtil.width(16)),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   const ProfileImageBox(),
                   const OptionsGrid(),
                   const ActionButtons(),
+                  SizedBox(height: ScaleUtil.height(5)),
                 ],
               ),
             ),

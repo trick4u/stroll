@@ -41,7 +41,7 @@ class TitleBox extends StatelessWidget {
             )
           ],
         ),
-        SizedBox(height: ScaleUtil.height(6)),
+        SizedBox(height: ScaleUtil.height(2)),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
