@@ -21,14 +21,14 @@ class TitleBox extends StatelessWidget {
               StringsCollection.appTitle,
               style: TextStyle(
                 fontFamily: 'ProximaNova',
-                color: AppColors.lightColor,
+                color: Color(0xffCCC8FF),
                 fontSize: ScaleUtil.fontSize(34),
                 fontWeight: FontWeight.w600,
                 shadows: [
                   Shadow(
-                    offset: Offset(0, 3), // Slightly larger offset
-                    blurRadius: 4.0,
-                    color: AppColors.lightColor.withOpacity(0.3),
+                    offset: Offset(0, 1), // Slightly larger offset
+                    blurRadius: 2.0,
+                    color: AppColors.darkColor.withOpacity(0.2),
                   ),
                 ],
               ),
