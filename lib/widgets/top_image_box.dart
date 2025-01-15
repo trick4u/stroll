@@ -38,12 +38,8 @@ class TopImageBox extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-            top: ScaleUtil.height(14),
-            left: ScaleUtil.width(80),
-            child: SafeArea(
-              child: const TitleBox(),
-            ),
+          SafeArea(
+            child: const TitleBox(),
           ),
         ],
       ),
